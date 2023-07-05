@@ -1,0 +1,16 @@
+{
+    "name": "hexlet/code",
+    "description": "hexlet project",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bitvinus",
+            "email": "dezenu@ya.ru"
+        }
+    ],
+    "require": {}
+}
