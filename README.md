@@ -17,3 +17,11 @@
 ### Player looses the game "Is the number even?":
 
 [![asciicast](https://asciinema.org/a/NusHPQ1iLV5zbUdeHty0U2g3Y.svg)](https://asciinema.org/a/NusHPQ1iLV5zbUdeHty0U2g3Y)
+
+### Player looses the game "Calculate":
+
+[![asciicast](https://asciinema.org/a/jcUlXA2qzeNdXiwgy5UDQ5RYm.svg)](https://asciinema.org/a/jcUlXA2qzeNdXiwgy5UDQ5RYm)
+
+### Player looses the game "Calculate":
+
+[![asciicast](https://asciinema.org/a/4j7SB9RY8SB9EXOIhsvN5xBH7.svg)](https://asciinema.org/a/4j7SB9RY8SB9EXOIhsvN5xBH7)
