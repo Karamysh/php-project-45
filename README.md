@@ -25,3 +25,11 @@
 ### Player looses the game "Calculate":
 
 [![asciicast](https://asciinema.org/a/4j7SB9RY8SB9EXOIhsvN5xBH7.svg)](https://asciinema.org/a/4j7SB9RY8SB9EXOIhsvN5xBH7)
+
+### Player wins the game "GCD":
+
+[![asciicast](https://asciinema.org/a/vbbcKAA3afmscQeeRWXrh8g30.svg)](https://asciinema.org/a/vbbcKAA3afmscQeeRWXrh8g30)
+
+### Player looses the game "GCD":
+
+[![asciicast](https://asciinema.org/a/7tnyOKMoSP0ohOXNdu2JMwjiY.svg)](https://asciinema.org/a/7tnyOKMoSP0ohOXNdu2JMwjiY)

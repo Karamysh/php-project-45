@@ -9,13 +9,15 @@
       "src/Cli.php",
       "src/Even.php",
       "src/Engine.php",
-      "src/Games/Calc.php"
+      "src/Games/Calc.php",
+      "src/Games/Gcd.php"
     ]
   },
   "bin": [
     "bin/brain-games",
     "bin/brain-even",
-    "bin/brain-calc"
+    "bin/brain-calc",
+    "bin/brain-gcd"
   ],
   "license": "MIT",
   "authors": [
