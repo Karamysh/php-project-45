@@ -18,7 +18,7 @@
 
 [![asciicast](https://asciinema.org/a/NusHPQ1iLV5zbUdeHty0U2g3Y.svg)](https://asciinema.org/a/NusHPQ1iLV5zbUdeHty0U2g3Y)
 
-### Player looses the game "Calculate":
+### Player wins the game "Calculate":
 
 [![asciicast](https://asciinema.org/a/jcUlXA2qzeNdXiwgy5UDQ5RYm.svg)](https://asciinema.org/a/jcUlXA2qzeNdXiwgy5UDQ5RYm)
 
