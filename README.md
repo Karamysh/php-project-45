@@ -33,3 +33,11 @@
 ### Player looses the game "GCD":
 
 [![asciicast](https://asciinema.org/a/7tnyOKMoSP0ohOXNdu2JMwjiY.svg)](https://asciinema.org/a/7tnyOKMoSP0ohOXNdu2JMwjiY)
+
+### Player wins the game "Progression":
+
+[![asciicast](https://asciinema.org/a/36iMa6ce0nr0zjhhSCIfRaZmW.svg)](https://asciinema.org/a/36iMa6ce0nr0zjhhSCIfRaZmW)
+
+### Player looses the game "Progression":
+
+[![asciicast](https://asciinema.org/a/VXE36i97PdAmnbv3yEKgDodQE.svg)](https://asciinema.org/a/VXE36i97PdAmnbv3yEKgDodQE)

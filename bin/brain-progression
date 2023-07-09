@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+
+namespace BrainGames\src\Games\progression;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use function src\Games\progression;
+
+gameFourth();
