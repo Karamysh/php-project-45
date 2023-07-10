@@ -1,46 +1,48 @@
 <?php
 
-namespace BrainGames\src\Engine;
-
-require_once __DIR__ . '/../../vendor/autoload.php';
-
-use function src\Engine;
+namespace BrainGames\src\Games\Calc;
 
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\src\Engine\startPlay;
 
-function calculator()
+use const BrainGames\src\Engine\ROUNDS_COUNT;
+
+const CONDITION = 'What is the result of the expression?';
+
+function randomNumbers()
 {
-    line('What is the result of the expression?');
-    $index = 0;
-    $minNumber = 0;
-    $maxNumber1 = 50;
-    $maxNumber2 = 10;
-    $quantityOperation = 2;
-    while ($index < 3) {
-        $numbers1 = rand($minNumber, $maxNumber1);
-        $numbers2 = rand($minNumber, $maxNumber2);
-        $operation = rand($minNumber, $quantityOperation);
-        $result = 0;
-        if ($operation === 0) {
-            $question = "$numbers1 + $numbers2";
-            $result = $result + $numbers1 + $numbers2;
-        } elseif ($operation === 1) {
-            $question = "$numbers1 - $numbers2";
-            $result = $result + $numbers1 - $numbers2;
-        } else {
-            $question = ("$numbers1 * $numbers2");
-            $result = ($result + $numbers1) * $numbers2;
-        }
-        line("Question: %s!", $question);
-        $answer = prompt('Your answer');
+    $minNumber = 2;
+    $maxNumber1 = 20;
+    return (rand($minNumber, $maxNumber1));
+}
 
-        if ($answer == $result) {
-            line('Correct!');
-            $index += 1;
-        } else {
-            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-            return line("Let's try again, %s!", $name);
-        }
+function calculate(int $randomNumber1, int $randomNumber2, string $operation)
+{
+    switch ($operation) {
+        case '+':
+            $result = $randomNumber1 + $randomNumber2;
+            break;
+        case '-':
+            $result = $randomNumber1 - $randomNumber2;
+            break;
+        default:
+            $result = $randomNumber1 * $randomNumber2;
     }
+    return $result;
+}
+
+function startCalcGame()
+{
+    $operations = ['+', '-', '*'];
+    $questionsAndAnswers = [];
+    for ($index = 1; $index <= ROUNDS_COUNT; $index++) {
+        $randomNumber1 = randomNumbers();
+        $randomNumber2 = randomNumbers();
+        $operation = $operations[array_rand($operations)];
+        $question = "$randomNumber1 $operation $randomNumber2";
+        $questionsAndAnswers[$question] = calculate($randomNumber1, $randomNumber2, $operation);
+    }
+
+    startPlay($questionsAndAnswers, CONDITION);
 }

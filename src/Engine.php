@@ -2,36 +2,26 @@
 
 namespace BrainGames\src\Engine;
 
-
 use function cli\line;
 use function cli\prompt;
 
-function greeting($name)
-{
-    line("Hello, %s!", $name);
-}
+const ROUNDS_COUNT = 3;
 
-function randomNumbers1()
+function startPlay(array $questionsAndAnswers, string $condition)
 {
-    $minNumber = 1;
-    $maxNumber1 = 50;
-    return (rand($minNumber, $maxNumber1));
-}
-
-function randomNumbers2()
-{
-    $minNumber = 1;
-    $maxNumber2 = 9;
-    return (rand($minNumber, $maxNumber2));
-}
-
-function wrong($name)
-{
-    line("Let's try again, %s!", $name);
-
-}
-
-function congratulations($name)
-{
-    line("Congratulations, %s!", $name);
+    line('Welcome to the Brain Games!');
+    $namePlayer = prompt('May I have your name?');
+    line("Hello, %s!", $namePlayer);
+    line($condition);
+    foreach ($questionsAndAnswers as $question => $rightAnswer) {
+        line("Question: %s!", $question);
+        $answer = prompt('Your answer');
+        if ($answer == $rightAnswer) {
+            line('Correct!');
+        } else {
+            line("'$answer' is wrong answer ;(. Correct answer was '$rightAnswer'.");
+            return line("Let's try again, %s!", $namePlayer);
+        }
+    }
+    line("Congratulations, %s!", $namePlayer);
 }

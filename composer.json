@@ -7,11 +7,12 @@
     },
     "files": [
       "src/Cli.php",
-      "src/Even.php",
+      "src/Games/Even.php",
       "src/Engine.php",
       "src/Games/Calc.php",
       "src/Games/Gcd.php",
-      "src/Games/progression.php"
+      "src/Games/Progression.php",
+      "src/Games/Prime.php"
     ]
   },
   "bin": [
@@ -19,7 +20,8 @@
     "bin/brain-even",
     "bin/brain-calc",
     "bin/brain-gcd",
-    "bin/brain-progression"
+    "bin/brain-progression",
+    "bin/brain-prime"
   ],
   "license": "MIT",
   "authors": [

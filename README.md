@@ -41,3 +41,11 @@
 ### Player looses the game "Progression":
 
 [![asciicast](https://asciinema.org/a/VXE36i97PdAmnbv3yEKgDodQE.svg)](https://asciinema.org/a/VXE36i97PdAmnbv3yEKgDodQE)
+
+### Player wins the game "Prime":
+
+[![asciicast](https://asciinema.org/a/UergcBLL11n5vx8V4e5VM7LVV.svg)](https://asciinema.org/a/UergcBLL11n5vx8V4e5VM7LVV)
+
+### Player looses the game "Prime":
+
+[![asciicast](https://asciinema.org/a/A7ssyHPvnlZNgmD11jPR5Fl1o.svg)](https://asciinema.org/a/A7ssyHPvnlZNgmD11jPR5Fl1o)

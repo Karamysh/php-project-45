@@ -4,65 +4,42 @@ namespace BrainGames\src\Games\Gcd;
 
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\src\Engine\startPlay;
 
-function randomNumbers1()
+use const BrainGames\src\Engine\ROUNDS_COUNT;
+
+const CONDITION = 'Find the greatest common divisor of given numbers.';
+
+function randomNumbers()
 {
-    $minNumber = 1;
-    $maxNumber1 = 50;
+    $minNumber = 2;
+    $maxNumber1 = 20;
     return (rand($minNumber, $maxNumber1));
 }
 
-function randomNumbers2()
+function startGcdGame()
 {
-    $minNumber = 1;
-    $maxNumber2 = 10;
-    return (rand($minNumber, $maxNumber2));
-}
-
-function startGdcGame()
-{
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line('Find the greatest common divisor of given numbers.');
-    $index = 0;
-    while ($index < 3) {
-        $numbers1 = randomNumbers1();
-        $numbers2 = randomNumbers2();
-        $result = 0;
-        $question = "$numbers1 $numbers2";
-        if ($numbers1 === $numbers2) {
-            $result = $numbers1;
-        } elseif ($numbers1 > $numbers2) {
-            $i = 1;
-            while ($i <= $numbers2) {
-                if ($numbers1 % $i === 0 && $numbers2 % $i === 0) {
-                    $result = $i;
-                    $i += 1;
-                } else {
-                    $i += 1;
-                }
-            }
+    $questionsAndAnswers = [];
+    for ($index = 0; $index < ROUNDS_COUNT; $index++) {
+        $randomNumber1 = randomNumbers();
+        $randomNumber2 = randomNumbers();
+        $result = 1;
+        $question = "$randomNumber1 $randomNumber2";
+        if ($randomNumber1 === $randomNumber2) {
+            $result = $randomNumber1;
         } else {
-            $i = 1;
-            while ($i <= $numbers1) {
-                if ($numbers2 % $i === 0 && $numbers1 % $i === 0) {
-                    $result = $i;
-                    $i += 1;
+            $greteasCommonDivisor = 1;
+            while ($greteasCommonDivisor <= $randomNumber2) {
+                if ($randomNumber1 % $greteasCommonDivisor === 0 && $randomNumber2 % $greteasCommonDivisor === 0) {
+                    $result = $greteasCommonDivisor;
+                    $greteasCommonDivisor += 1;
                 } else {
-                    $i += 1;
+                    $greteasCommonDivisor += 1;
                 }
             }
         }
-        line("Question: %s!", $question);
-        $answer = prompt('Your answer');
-        if ($answer == $result) {
-            line('Correct!');
-            $index += 1;
-        } else {
-            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-            return line("Let's try again, %s!", $name);
-        }
+        $questionsAndAnswers[$question] = $result;
     }
-    line("Congratulations, %s!", $name);
+
+    startPlay($questionsAndAnswers, CONDITION);
 }
