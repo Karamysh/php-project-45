@@ -22,7 +22,7 @@ function calculate(int $randomNumber1, int $randomNumber2, string $operation)
     $result = match ($operation) {
         '+' => $randomNumber1 + $randomNumber2,
         '-' => $randomNumber1 - $randomNumber2,
-        'default' => $randomNumber1 * $randomNumber2,
+        '*' => $randomNumber1 * $randomNumber2,
     };
     return $result;
 }
