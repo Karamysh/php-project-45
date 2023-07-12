@@ -19,7 +19,7 @@ function randomNumber()
 
 function calculate(int $randomNumber1, int $randomNumber2, string $operation)
 {
-    $result = match ($operation) {
+    $result = match ((string) $operation) {
         '+' => $randomNumber1 + $randomNumber2,
         '-' => $randomNumber1 - $randomNumber2,
         '*' => $randomNumber1 * $randomNumber2,

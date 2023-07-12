@@ -17,7 +17,7 @@ function randomNumber()
     return (rand($minNumber, $maxNumber1));
 }
 
-function gcdNumber($randomNumber1, $randomNumber2)
+function gcdNumber(int $randomNumber1, int $randomNumber2)
 {
     $result = 0;
     if ($randomNumber1 === $randomNumber2) {
