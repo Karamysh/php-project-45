@@ -18,7 +18,7 @@ function randomNumber()
 }
 
 function gcdNumber($randomNumber1, $randomNumber2)
-{   
+{
     $result = 0;
     if ($randomNumber1 === $randomNumber2) {
         $result = $randomNumber1;
