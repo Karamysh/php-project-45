@@ -17,24 +17,14 @@ function randomNumber()
     return (rand($minNumber, $maxNumber1));
 }
 
-function calculate(int $randomNumber1, int $randomNumber2, string $operation)
+function calculate(int $randomNumber1, int $randomNumber2, string $operation): mixed
 {
-    // $result = match ($operation) {
-    //     '+' => $randomNumber1 + $randomNumber2,
-    //     '-' => $randomNumber1 - $randomNumber2,
-    //     '*' => $randomNumber1 * $randomNumber2,
-    // };
-    switch ($operation) {
-        case '+':
-            $result = $randomNumber1 + $randomNumber2;
-            break;
-        case '-':
-            $result = $randomNumber1 - $randomNumber2;
-            break;
-        default:
-            $result = $randomNumber1 * $randomNumber2;
-    }
-    return $result;
+    return match ($operation) {
+        '+' => $randomNumber1 + $randomNumber2,
+        '-' => $randomNumber1 - $randomNumber2,
+        '*' => $randomNumber1 * $randomNumber2,
+        default => 'error: unknown operator'
+    };
 }
 
 function startCalcGame()
