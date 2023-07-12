@@ -1,16 +1,16 @@
 <?php
 
-namespace BrainGames\src\Games\Calc;
+namespace BrainGames\Games\Calc;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\src\Engine\startPlay;
+use function BrainGames\Engine\startPlay;
 
-use const BrainGames\src\Engine\ROUNDS_COUNT;
+use const BrainGames\Engine\ROUNDS_COUNT;
 
 const CONDITION = 'What is the result of the expression?';
 
-function randomNumbers()
+function randomNumber()
 {
     $minNumber = 2;
     $maxNumber1 = 20;
@@ -19,16 +19,11 @@ function randomNumbers()
 
 function calculate(int $randomNumber1, int $randomNumber2, string $operation)
 {
-    switch ($operation) {
-        case '+':
-            $result = $randomNumber1 + $randomNumber2;
-            break;
-        case '-':
-            $result = $randomNumber1 - $randomNumber2;
-            break;
-        default:
-            $result = $randomNumber1 * $randomNumber2;
-    }
+    $result = match ($operation) {
+        '+' => $randomNumber1 + $randomNumber2,
+        '-' => $randomNumber1 - $randomNumber2,
+        'default' => $randomNumber1 * $randomNumber2,
+    };
     return $result;
 }
 
@@ -37,8 +32,8 @@ function startCalcGame()
     $operations = ['+', '-', '*'];
     $questionsAndAnswers = [];
     for ($index = 1; $index <= ROUNDS_COUNT; $index++) {
-        $randomNumber1 = randomNumbers();
-        $randomNumber2 = randomNumbers();
+        $randomNumber1 = randomNumber();
+        $randomNumber2 = randomNumber();
         $operation = $operations[array_rand($operations)];
         $question = "$randomNumber1 $operation $randomNumber2";
         $questionsAndAnswers[$question] = calculate($randomNumber1, $randomNumber2, $operation);

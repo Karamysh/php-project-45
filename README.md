@@ -1,6 +1,14 @@
 # Brain Games
 
-The collection of games for Hexlet training project
+## Description
+
+Mind Games is a set of five console games built on the principle of popular mobile applications for brain pumping. Each game asks questions that need to be answered correctly. After three correct answers, it is considered that the game is over. Incorrect answers end the game and offer to go through it again. Games:
+
+1. Calculator. Arithmetic expressions that need to be calculated.
+2. Progression. Search for missing numbers in a sequence of numbers.
+3. Definition of an even number.
+4. Determination of the greatest common divisor.
+5. Definition of a prime number.
 
 ### Hexlet tests and linter status:
 
@@ -9,6 +17,11 @@ The collection of games for Hexlet training project
 ### CodeClimate status:
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/0bb157c0264ab3f8e288/maintainability)](https://codeclimate.com/github/Karamysh/php-project-45/maintainability)
+
+## Minimum requirements
+
+- PHP 8.1
+- Compouser 2.5.8
 
 ## Installation
 

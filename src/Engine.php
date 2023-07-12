@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\src\Engine;
+namespace BrainGames\Engine;
 
 use function cli\line;
 use function cli\prompt;
@@ -16,12 +16,13 @@ function startPlay(array $questionsAndAnswers, string $condition)
     foreach ($questionsAndAnswers as $question => $rightAnswer) {
         line("Question: %s!", $question);
         $answer = prompt('Your answer');
-        if ($answer == $rightAnswer) {
-            line('Correct!');
-        } else {
+        if ($answer != $rightAnswer) {
             line("'$answer' is wrong answer ;(. Correct answer was '$rightAnswer'.");
-            return line("Let's try again, %s!", $namePlayer);
+            line("Let's try again, %s!", $namePlayer);
+            return;
         }
+        line('Correct!');
     }
     line("Congratulations, %s!", $namePlayer);
+    return;
 }

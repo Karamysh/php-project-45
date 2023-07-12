@@ -1,16 +1,16 @@
 <?php
 
-namespace BrainGames\src\Games\Even;
+namespace BrainGames\Games\Even;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\src\Engine\startPlay;
+use function BrainGames\Engine\startPlay;
 
-use const BrainGames\src\Engine\ROUNDS_COUNT;
+use const BrainGames\Engine\ROUNDS_COUNT;
 
 const CONDITION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-function randomNumbers()
+function randomNumber()
 {
     $minNumber = 2;
     $maxNumber1 = 50;
@@ -19,23 +19,15 @@ function randomNumbers()
 
 function isEven(int $number)
 {
-    if (($number % 2) === 0) {
-        return true;
-    } else {
-        return false;
-    }
+    return ($number % 2) === 0;
 }
 
 function startEvenGame()
 {
     $questionsAndAnswers = [];
     for ($index = 0; $index < ROUNDS_COUNT; $index++) {
-        $question = randomNumbers();
-        if (isEven($question) === true) {
-            $questionsAndAnswers[$question] = 'yes';
-        } else {
-            $questionsAndAnswers[$question] = 'no';
-        }
+        $question = randomNumber();
+        $questionsAndAnswers[$question] = (isEven($question) === true) ? 'yes' : 'no';
     }
 
     startPlay($questionsAndAnswers, CONDITION);
