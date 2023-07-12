@@ -25,7 +25,7 @@ function isPrime(int $number)
             $divisors += 1;
         }
     }
-    return $divisors === 2;
+    return ($divisors === 2);
 }
 
 function startIsPrimeGame()
