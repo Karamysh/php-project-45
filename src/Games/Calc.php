@@ -17,9 +17,9 @@ function randomNumber()
     return (rand($minNumber, $maxNumber1));
 }
 
-function calculate(int $randomNumber1, int $randomNumber2, string $operation)
+function calculate(int $randomNumber1, int $randomNumber2, $operation)
 {
-    $result = match ((string) $operation) {
+    $result = match ($operation) {
         '+' => $randomNumber1 + $randomNumber2,
         '-' => $randomNumber1 - $randomNumber2,
         '*' => $randomNumber1 * $randomNumber2,
