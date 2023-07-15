@@ -4,7 +4,7 @@ namespace BrainGames\Games\Prime;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\startPlay;
+use function BrainGames\Engine\startGame;
 
 use const BrainGames\Engine\ROUNDS_COUNT;
 
@@ -36,5 +36,5 @@ function startIsPrimeGame()
         $questionsAndAnswers[$question] = (isPrime($question) === true) ? 'yes' : 'no';
     }
 
-    startPlay($questionsAndAnswers, CONDITION);
+    startGame($questionsAndAnswers, CONDITION);
 }

@@ -4,7 +4,7 @@ namespace BrainGames\Games\Gcd;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\startPlay;
+use function BrainGames\Engine\startGame;
 
 use const BrainGames\Engine\ROUNDS_COUNT;
 
@@ -47,5 +47,5 @@ function startGcdGame()
         $questionsAndAnswers[$question] = gcdNumber($randomNumber1, $randomNumber2);
     }
 
-    startPlay($questionsAndAnswers, CONDITION);
+    startGame($questionsAndAnswers, CONDITION);
 }

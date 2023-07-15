@@ -4,7 +4,7 @@ namespace BrainGames\Games\Progression;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\startPlay;
+use function BrainGames\Engine\startGame;
 
 use const BrainGames\Engine\ROUNDS_COUNT;
 
@@ -43,5 +43,5 @@ function startProgressionGame()
         $questionsAndAnswers[$question] = $missingNumber;
     }
 
-    startPlay($questionsAndAnswers, CONDITION);
+    startGame($questionsAndAnswers, CONDITION);
 }
