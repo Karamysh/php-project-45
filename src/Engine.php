@@ -19,7 +19,7 @@ function startGame(array $questionsAndAnswers, string $condition)
         $answer = prompt('Your answer');
 
         if ($answer != $rightAnswer) {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $answer);
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $rightAnswer);
             line("Let's try again, %s!", $namePlayer);
             return;
         }
