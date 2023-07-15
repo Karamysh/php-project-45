@@ -4,7 +4,7 @@ namespace BrainGames\Games\Calc;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\startPlay;
+use function BrainGames\Engine\startGame;
 
 use const BrainGames\Engine\ROUNDS_COUNT;
 
@@ -39,5 +39,5 @@ function startCalcGame()
         $questionsAndAnswers[$question] = calculate($randomNumber1, $randomNumber2, $operation);
     }
 
-    startPlay($questionsAndAnswers, CONDITION);
+    startGame($questionsAndAnswers, CONDITION);
 }
