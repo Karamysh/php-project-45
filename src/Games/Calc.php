@@ -4,13 +4,13 @@ namespace BrainGames\Games\Calc;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\startGame;
+use function BrainGames\Engine\runGame;
 
 use const BrainGames\Engine\ROUNDS_COUNT;
 
 const CONDITION = 'What is the result of the expression?';
 
-function randomNumber()
+function getRandomNumber()
 {
     $minNumber = 2;
     $maxNumber1 = 20;
@@ -23,21 +23,21 @@ function calculate(int $randomNumber1, int $randomNumber2, string $operation): m
         '+' => $randomNumber1 + $randomNumber2,
         '-' => $randomNumber1 - $randomNumber2,
         '*' => $randomNumber1 * $randomNumber2,
-        default => 'error: unknown operator'
+        default => throw new \Exception('error: unknown operator')
     };
 }
 
-function startCalcGame()
+function startGame()
 {
     $operations = ['+', '-', '*'];
     $questionsAndAnswers = [];
-    for ($index = 1; $index <= ROUNDS_COUNT; $index++) {
-        $randomNumber1 = randomNumber();
-        $randomNumber2 = randomNumber();
+    for ($index = 0; $index < ROUNDS_COUNT; $index++) {
+        $randomNumber1 = getRandomNumber();
+        $randomNumber2 = getRandomNumber();
         $operation = $operations[array_rand($operations)];
         $question = "$randomNumber1 $operation $randomNumber2";
         $questionsAndAnswers[$question] = calculate($randomNumber1, $randomNumber2, $operation);
     }
 
-    startGame($questionsAndAnswers, CONDITION);
+    runGame($questionsAndAnswers, CONDITION);
 }

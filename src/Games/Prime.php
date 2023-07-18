@@ -4,13 +4,13 @@ namespace BrainGames\Games\Prime;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\startGame;
+use function BrainGames\Engine\runGame;
 
 use const BrainGames\Engine\ROUNDS_COUNT;
 
 const CONDITION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function randomNumber()
+function getRandomNumber()
 {
     $minNumber = 2;
     $maxNumber1 = 50;
@@ -20,7 +20,7 @@ function randomNumber()
 function isPrime(int $number)
 {
     $divisors = 0;
-    for ($j = 1; $j <= $number; $j++) {
+    for ($j = 0; $j < $number; $j++) {
         if (($number % $j) === 0) {
             $divisors += 1;
         }
@@ -28,13 +28,13 @@ function isPrime(int $number)
     return ($divisors === 2);
 }
 
-function startIsPrimeGame()
+function startGame()
 {
     $questionsAndAnswers = [];
     for ($index = 0; $index < ROUNDS_COUNT; $index++) {
-        $question = randomNumber();
+        $question = getRandomNumber();
         $questionsAndAnswers[$question] = (isPrime($question) === true) ? 'yes' : 'no';
     }
 
-    startGame($questionsAndAnswers, CONDITION);
+    runGame($questionsAndAnswers, CONDITION);
 }

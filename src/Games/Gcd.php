@@ -4,13 +4,13 @@ namespace BrainGames\Games\Gcd;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\startGame;
+use function BrainGames\Engine\runGame;
 
 use const BrainGames\Engine\ROUNDS_COUNT;
 
 const CONDITION = 'Find the greatest common divisor of given numbers.';
 
-function randomNumber()
+function getRandomNumber()
 {
     $minNumber = 2;
     $maxNumber1 = 20;
@@ -19,33 +19,20 @@ function randomNumber()
 
 function gcdNumber(int $randomNumber1, int $randomNumber2)
 {
-    $result = 0;
-    if ($randomNumber1 === $randomNumber2) {
-        $result = $randomNumber1;
-    } else {
-        $greatestCommonDivisor = 1;
-        while ($greatestCommonDivisor <= $randomNumber2) {
-            if ($randomNumber1 % $greatestCommonDivisor === 0 && $randomNumber2 % $greatestCommonDivisor === 0) {
-                $result = $greatestCommonDivisor;
-                $greatestCommonDivisor += 1;
-            } else {
-                $greatestCommonDivisor += 1;
-            }
-        }
-    }
-    return $result;
+    return ($randomNumber1 % $randomNumber2 !== 0)
+        ? gcdNumber($randomNumber2, $randomNumber1 % $randomNumber2)
+        : $randomNumber2;
 }
 
-function startGcdGame()
+function startGame()
 {
     $questionsAndAnswers = [];
     for ($index = 0; $index < ROUNDS_COUNT; $index++) {
-        $randomNumber1 = randomNumber();
-        $randomNumber2 = randomNumber();
-        $result = 1;
+        $randomNumber1 = getRandomNumber();
+        $randomNumber2 = getRandomNumber();
         $question = "$randomNumber1 $randomNumber2";
         $questionsAndAnswers[$question] = gcdNumber($randomNumber1, $randomNumber2);
     }
 
-    startGame($questionsAndAnswers, CONDITION);
+    runGame($questionsAndAnswers, CONDITION);
 }

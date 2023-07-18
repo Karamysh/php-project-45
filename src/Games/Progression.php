@@ -4,7 +4,7 @@ namespace BrainGames\Games\Progression;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\startGame;
+use function BrainGames\Engine\runGame;
 
 use const BrainGames\Engine\ROUNDS_COUNT;
 
@@ -12,36 +12,22 @@ const PROGRESSION_LENGTH = 8;
 
 const CONDITION = 'What number is missing in the progression?';
 
-function randomNumber1()
-{
-    $minNumber = 2;
-    $maxNumber1 = 50;
-    return (rand($minNumber, $maxNumber1));
-}
-
-function randomNumber2()
-{
-    $minNumber = 1;
-    $maxNumber2 = (PROGRESSION_LENGTH - 1);
-    return (rand($minNumber, $maxNumber2));
-}
-
-function startProgressionGame()
+function startGame()
 {
     $questionsAndAnswers = [];
-    for ($index = 1; $index <= ROUNDS_COUNT; $index++) {
-        $firstNumberOfProgression = randomNumber1();
-        $stepProgression = randomNumber2();
-        $numberOfMissingMember = randomNumber2();
+    for ($index = 0; $index < ROUNDS_COUNT; $index++) {
+        $firstNumberOfProgression = rand(2, 50);
+        $stepProgression = rand(1, PROGRESSION_LENGTH - 1);
+        $indexOfMissingNumber = rand(1, PROGRESSION_LENGTH - 1);
         $progression = [];
         for ($j = 0; $j < PROGRESSION_LENGTH; $j++) {
             $progression[$j] = $firstNumberOfProgression + $j * $stepProgression;
         }
-        $missingNumber = $progression[$numberOfMissingMember];
-        $progression[$numberOfMissingMember] = '..';
+        $missingNumber = $progression[$indexOfMissingNumber];
+        $progression[$indexOfMissingNumber] = '..';
         $question = implode(' ', $progression);
         $questionsAndAnswers[$question] = $missingNumber;
     }
 
-    startGame($questionsAndAnswers, CONDITION);
+    runGame($questionsAndAnswers, CONDITION);
 }
