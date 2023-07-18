@@ -20,7 +20,7 @@ function getRandomNumber()
 function isPrime(int $number)
 {
     $divisors = 0;
-    for ($j = 0; $j < $number; $j++) {
+    for ($j = 1; $j <= $number; $j++) {
         if (($number % $j) === 0) {
             $divisors += 1;
         }
@@ -31,7 +31,7 @@ function isPrime(int $number)
 function startGame()
 {
     $questionsAndAnswers = [];
-    for ($index = 0; $index < ROUNDS_COUNT; $index++) {
+    for ($index = 1; $index <= ROUNDS_COUNT; $index++) {
         $question = getRandomNumber();
         $questionsAndAnswers[$question] = (isPrime($question) === true) ? 'yes' : 'no';
     }

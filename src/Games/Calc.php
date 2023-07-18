@@ -31,7 +31,7 @@ function startGame()
 {
     $operations = ['+', '-', '*'];
     $questionsAndAnswers = [];
-    for ($index = 0; $index < ROUNDS_COUNT; $index++) {
+    for ($index = 1; $index <= ROUNDS_COUNT; $index++) {
         $randomNumber1 = getRandomNumber();
         $randomNumber2 = getRandomNumber();
         $operation = $operations[array_rand($operations)];

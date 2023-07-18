@@ -15,12 +15,12 @@ const CONDITION = 'What number is missing in the progression?';
 function startGame()
 {
     $questionsAndAnswers = [];
-    for ($index = 0; $index < ROUNDS_COUNT; $index++) {
+    for ($index = 1; $index <= ROUNDS_COUNT; $index++) {
         $firstNumberOfProgression = rand(2, 50);
         $stepProgression = rand(1, PROGRESSION_LENGTH - 1);
         $indexOfMissingNumber = rand(1, PROGRESSION_LENGTH - 1);
         $progression = [];
-        for ($j = 0; $j < PROGRESSION_LENGTH; $j++) {
+        for ($j = 1; $j <= PROGRESSION_LENGTH; $j++) {
             $progression[$j] = $firstNumberOfProgression + $j * $stepProgression;
         }
         $missingNumber = $progression[$indexOfMissingNumber];

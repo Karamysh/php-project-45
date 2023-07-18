@@ -27,7 +27,7 @@ function gcdNumber(int $randomNumber1, int $randomNumber2)
 function startGame()
 {
     $questionsAndAnswers = [];
-    for ($index = 0; $index < ROUNDS_COUNT; $index++) {
+    for ($index = 1; $index <= ROUNDS_COUNT; $index++) {
         $randomNumber1 = getRandomNumber();
         $randomNumber2 = getRandomNumber();
         $question = "$randomNumber1 $randomNumber2";

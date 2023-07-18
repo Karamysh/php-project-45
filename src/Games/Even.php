@@ -25,7 +25,7 @@ function isEven(int $number)
 function startGame()
 {
     $questionsAndAnswers = [];
-    for ($index = 0; $index < ROUNDS_COUNT; $index++) {
+    for ($index = 1; $index <= ROUNDS_COUNT; $index++) {
         $question = getRandomNumber();
         $questionsAndAnswers[$question] = (isEven($question) === true) ? 'yes' : 'no';
     }
