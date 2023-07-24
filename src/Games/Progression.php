@@ -17,10 +17,10 @@ function startGame()
     $questionsAndAnswers = [];
     for ($index = 1; $index <= ROUNDS_COUNT; $index++) {
         $firstNumberOfProgression = rand(2, 50);
-        $stepProgression = rand(1, PROGRESSION_LENGTH - 1);
+        $stepProgression = rand(1, 10);
         $indexOfMissingNumber = rand(1, PROGRESSION_LENGTH - 1);
         $progression = [];
-        for ($j = 1; $j <= PROGRESSION_LENGTH; $j++) {
+        for ($j = 0; $j < PROGRESSION_LENGTH; $j++) {
             $progression[$j] = $firstNumberOfProgression + $j * $stepProgression;
         }
         $missingNumber = $progression[$indexOfMissingNumber];

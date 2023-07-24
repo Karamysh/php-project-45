@@ -17,11 +17,11 @@ function getRandomNumber()
     return (rand($minNumber, $maxNumber1));
 }
 
-function gcdNumber(int $randomNumber1, int $randomNumber2)
+function getGcdNumber(int $num1, int $num2)
 {
-    return ($randomNumber1 % $randomNumber2 !== 0)
-        ? gcdNumber($randomNumber2, $randomNumber1 % $randomNumber2)
-        : $randomNumber2;
+    return ($num1 % $num2 !== 0)
+        ? getGcdNumber($num2, $num1 % $num2)
+        : $num2;
 }
 
 function startGame()
@@ -31,7 +31,7 @@ function startGame()
         $randomNumber1 = getRandomNumber();
         $randomNumber2 = getRandomNumber();
         $question = "$randomNumber1 $randomNumber2";
-        $questionsAndAnswers[$question] = gcdNumber($randomNumber1, $randomNumber2);
+        $questionsAndAnswers[$question] = getGcdNumber($randomNumber1, $randomNumber2);
     }
 
     runGame($questionsAndAnswers, CONDITION);

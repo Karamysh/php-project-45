@@ -27,7 +27,7 @@ function startGame()
     $questionsAndAnswers = [];
     for ($index = 1; $index <= ROUNDS_COUNT; $index++) {
         $question = getRandomNumber();
-        $questionsAndAnswers[$question] = (isEven($question) === true) ? 'yes' : 'no';
+        $questionsAndAnswers[$question] = isEven($question) ? 'yes' : 'no';
     }
 
     runGame($questionsAndAnswers, CONDITION);

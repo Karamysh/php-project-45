@@ -33,7 +33,7 @@ function startGame()
     $questionsAndAnswers = [];
     for ($index = 1; $index <= ROUNDS_COUNT; $index++) {
         $question = getRandomNumber();
-        $questionsAndAnswers[$question] = (isPrime($question) === true) ? 'yes' : 'no';
+        $questionsAndAnswers[$question] = isPrime($question) ? 'yes' : 'no';
     }
 
     runGame($questionsAndAnswers, CONDITION);
